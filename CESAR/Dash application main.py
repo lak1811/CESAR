@@ -136,7 +136,7 @@ def update_table(_):
     table7_data = cursor.fetchall()
 
     # Fetch data for table 8 from MySQL (replace 'YOUR_QUERY_FOR_TABLE8' with your actual query)
-    cursor.execute("SELECT Fullname,YEAR,NATURE,INSTITUTION,COURSE,STUDENT,TYPE,SPONSOR from testapp1_otherproductions order by Fullname,YEAR")
+    cursor.execute("SELECT DISTINCT Fullname,YEAR,NATURE,INSTITUTION,COURSE,STUDENT,TYPE,SPONSOR from testapp1_otherproductions order by Fullname,YEAR")
     table8_data = cursor.fetchall()
     cursor.close()
 
