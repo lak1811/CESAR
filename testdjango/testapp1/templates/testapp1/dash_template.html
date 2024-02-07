@@ -1,0 +1,17 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Dash App</title>
+</head>
+<body>
+    <div id="dash-container">
+        {{ dash_layout | safe }}
+    </div>
+
+    <!-- Include Dash assets -->
+    <link rel="stylesheet" href="{% static 'dash.css' %}">
+    <script src="{% static 'dash.js' %}"></script>
+</body>
+</html>

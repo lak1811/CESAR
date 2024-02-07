@@ -1,0 +1,74 @@
+2023-07-23 00:53:53,479 ----------------------------------------------------------------------------------------------------
+2023-07-23 00:53:53,501 Model: "SequenceTagger(
+  (embeddings): StackedEmbeddings(
+    (list_embedding_0): TransformerWordEmbeddings(
+      (model): BertModel(
+        (embeddings): BertEmbeddings(
+          (word_embeddings): Embedding(119548, 768)
+          (position_embeddings): Embedding(512, 768)
+          (token_type_embeddings): Embedding(2, 768)
+          (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (encoder): BertEncoder(
+          (layer): ModuleList(
+            (0-11): 12 x BertLayer(
+              (attention): BertAttention(
+                (self): BertSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+                (intermediate_act_fn): GELUActivation()
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+          )
+        )
+        (pooler): BertPooler(
+          (dense): Linear(in_features=768, out_features=768, bias=True)
+          (activation): Tanh()
+        )
+      )
+    )
+  )
+  (word_dropout): WordDropout(p=0.05)
+  (locked_dropout): LockedDropout(p=0.5)
+  (embedding2nn): Linear(in_features=768, out_features=768, bias=True)
+  (rnn): LSTM(768, 256, batch_first=True, bidirectional=True)
+  (linear): Linear(in_features=512, out_features=19, bias=True)
+  (loss_function): ViterbiLoss()
+  (crf): CRF()
+)"
+2023-07-23 00:53:53,506 ----------------------------------------------------------------------------------------------------
+2023-07-23 00:53:53,507 Corpus: "Corpus: 849343 train + 94371 dev + 104857 test sentences"
+2023-07-23 00:53:53,507 ----------------------------------------------------------------------------------------------------
+2023-07-23 00:53:53,507 Parameters:
+2023-07-23 00:53:53,508  - learning_rate: "0.100000"
+2023-07-23 00:53:53,508  - mini_batch_size: "32"
+2023-07-23 00:53:53,508  - patience: "3"
+2023-07-23 00:53:53,508  - anneal_factor: "0.5"
+2023-07-23 00:53:53,509  - max_epochs: "10"
+2023-07-23 00:53:53,509  - shuffle: "True"
+2023-07-23 00:53:53,509  - train_with_dev: "False"
+2023-07-23 00:53:53,509  - batch_growth_annealing: "False"
+2023-07-23 00:53:53,509 ----------------------------------------------------------------------------------------------------
+2023-07-23 00:53:53,510 Model training base path: "flair_ner_model"
+2023-07-23 00:53:53,511 ----------------------------------------------------------------------------------------------------
+2023-07-23 00:53:53,511 Device: cpu
+2023-07-23 00:53:53,512 ----------------------------------------------------------------------------------------------------
+2023-07-23 00:53:53,512 Embeddings storage mode: cpu
+2023-07-23 00:53:53,512 ----------------------------------------------------------------------------------------------------
