@@ -27,7 +27,7 @@ from testapp1.models import (
     Publications,
 )
 import mysql.connector
-mydatabase=mysql.connector.connect(host='sql10.freemysqlhosting.net',port=3306,user='sql10639123',passwd='VyKJuJnrrl',db='sql10639123',charset='utf8',use_unicode=True)
+mydatabase=mysql.connector.connect(host='host',port=3306,user='username',passwd='password',db='database',charset='utf8',use_unicode=True)
 
 
 def compare(fullername):
@@ -91,7 +91,7 @@ def main(zipname):
                         lattesxmldata = inner_zip.open('curriculo.xml')
                         soup = BeautifulSoup(lattesxmldata, 'lxml', from_encoding='ISO-8859-1')
                         cv = soup.find_all('curriculo-vitae')
-                        
+                        #Code retrieved from LucyLattes and adjusted into this code
                         if len(cv) == 0:
                             print('curriculo vitae nao encontrado para', zipname)
                         else:
@@ -224,36 +224,7 @@ def main(zipname):
                                 
                                 df_capit_bool=True
 
-                        ##CREATE TABLE Education
-                        ##(
-                        ##Nome CHAR(20) NOT NULL,
-                        ##Year_INI VARCHAR (20) NOT NULL,
-                        ##Year_FIN VARCHAR(20),
-                        ##Month_INI VARCHAR (20) NOT NULL,
-                        ##Month_FIN VARCHAR(20),
-                        ##Course VARCHAR(200),
-                        ##Type CHAR(50),
-                        ##Disc CHAR(20),
-                        ##    CONSTRAINT EduPK PRIMARY KEY(Nome,Year_INI,Course),
-                        ##CONSTRAINT PersonFK FOREIGN KEY (Stativid,Låsnr) 
-                        ##REFERENCES Lås (Stativid,Låsnr);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
                         cv = soup.find_all('curriculo-vitae')
@@ -418,13 +389,7 @@ def main(zipname):
 
 
                         # lendo do zipfile
-                        # zipname = '3275865819287843.zip'
-                        # zipname = '8190371175828378.zip'
-                        # zipname = '5859946324646438.zip'
-
-                        # ttfile = open('tt.xml', 'w')
-                        # ttfile.write(soup.prettify())
-                        # ttfile.close()
+                      
                         # extrair todas as atividades profissionais
                         ap = soup.find_all('atuacao-profissional')
                         # VERIFICANDO se ha atuacao profissional
@@ -655,43 +620,6 @@ def main(zipname):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         op = soup.find_all('outra-producao')
                         # VERIFICANDO se ha outra producao
                         if len(op) == 0:
@@ -895,57 +823,8 @@ def main(zipname):
                                                         'TYPE': ls_adv_type,
                                                         'SPONSOR': ls_adv_suppo})
                                 df_advis_bool=True
-                        print()
-                        print()
-                        print()
-                        ##for x,y in df_advis.iterrows():
-                        ##    #print (y['YEAR'],y['TYPE'],y['COURSE'],y['NATURE'])
-                        ##    
-                        ##    var1=y['TYPE']
-                        ##    var2=y['YEAR']
-                        ##    var3=y['COURSE']
-                        ##    var4=y['NATURE']
-                        ##    print (var1,var2,var3,var4)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                      
+                        
 
                         # extrair demais-tipos-de-producao-tecnica
                         dtpt = soup.find_all('demais-tipos-de-producao-tecnica')
@@ -999,50 +878,6 @@ def main(zipname):
 
                             df_ccd_bool=True
                             print(df_ccd)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
